@@ -19,7 +19,7 @@ def init_db():
     """)
     conn.commit()
     conn.close()
-    init_db()
+    
 
 
 def make_short_code(length=6):
@@ -95,7 +95,13 @@ def redirect_to_original(short_code):
         return "Short URL not found", 404
 
     return redirect(row[0])
+# Database la ithe call kara - if chya var
+init_db()
 
+if __name__ == "__main__":
+    print("\nURL Shortener is running!")
+    print("Open: http://127.0.0.1:5000\n")
+    app.run(debug=True)
 
 if __name__ == "__main__":
     init_db()
