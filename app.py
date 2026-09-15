@@ -19,6 +19,7 @@ def init_db():
     """)
     conn.commit()
     conn.close()
+    init_db()
 
 
 def make_short_code(length=6):
